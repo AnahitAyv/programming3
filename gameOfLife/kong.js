@@ -1,4 +1,6 @@
-class Kong extends LivingCreature{
+let LivingCreature = require("./LivingCreature")
+
+module.export =class Kong extends LivingCreature{
     constructor(x,y){
         super(x,y)
         this.multiply = 0

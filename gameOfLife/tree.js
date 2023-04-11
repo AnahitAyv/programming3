@@ -1,8 +1,8 @@
+let LivingCreature = require("./LivingCreature")
 
-class Tree {
+module.export =class Tree extends LivingCreature {
     constructor(x, y) {
-        this.x = x
-        this.y = y
+        super(x,y)
         this.directions = [];
     }
 
