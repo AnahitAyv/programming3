@@ -35,7 +35,7 @@ module.export =class GrassEater extends LivingCreature{
      mul(){
         this.multiply++
          let emptyCell = this.chooseCell(0)
-         let newCell = random(emptyCell)
+         let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
 
             if(newCell && this.multiply >= 5){
                  let newX = newCell[0]
@@ -54,7 +54,7 @@ module.export =class GrassEater extends LivingCreature{
 
      eat(){
         let emptyCell = this.chooseCell(1)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
 
            if(newCell ){
                this.energy += 5
@@ -85,7 +85,7 @@ module.export =class GrassEater extends LivingCreature{
 
      move(){
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
 
             if(newCell){
                 let newX = newCell[0]
