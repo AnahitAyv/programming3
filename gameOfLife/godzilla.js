@@ -1,8 +1,8 @@
 let LivingCreature = require("./LivingCreature")
 
-module.export =class Godzilla extends LivingCreature{
+module.exports = class Godzilla extends LivingCreature {
     constructor(x, y) {
-       super(x,y)
+        super(x, y)
         this.energy = 10
         this.directions = [];
     }
@@ -35,7 +35,7 @@ module.export =class Godzilla extends LivingCreature{
                     found.push(this.directions[i])
                 }
             }
-           
+
         }
 
 
@@ -44,7 +44,7 @@ module.export =class Godzilla extends LivingCreature{
     mul() {
 
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell && this.multiply >= 8) {
             let newX = newCell[0]
@@ -77,7 +77,7 @@ module.export =class Godzilla extends LivingCreature{
                     kongArr.splice(i, 1)
                 }
             }
-           
+
 
             matrix[newY][newX] = 4
             matrix[this.y][this.x] = 0

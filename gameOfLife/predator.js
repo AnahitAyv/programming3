@@ -1,8 +1,8 @@
 let LivingCreature = require("./LivingCreature")
 
-module.export =class Predator extends LivingCreature{
+module.exports = class Predator extends LivingCreature {
     constructor(x, y) {
-        super(x,y)
+        super(x, y)
         this.energy = 15
         this.directions = [];
     }
@@ -47,7 +47,7 @@ module.export =class Predator extends LivingCreature{
 
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
+        let newCell = emptyCell[(Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]
@@ -63,7 +63,7 @@ module.export =class Predator extends LivingCreature{
         }
     }
     eat() {
-        let emptyCell = this.chooseCell(1,2)
+        let emptyCell = this.chooseCell(1, 2)
         let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
 
         if (newCell) {
@@ -77,7 +77,7 @@ module.export =class Predator extends LivingCreature{
                     break
                 }
             }
-            
+
             for (let i in grassEaterArr) {
                 if (newX == grassEaterArr[i].x && newY == grassEaterArr[i].y) {
                     grassEaterArr.splice(i, 1)
@@ -102,7 +102,7 @@ module.export =class Predator extends LivingCreature{
     }
     move() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell(Math.floor(Math.random() * emptyCell.length))
+        let newCell = emptyCell[(Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]
@@ -121,8 +121,8 @@ module.export =class Predator extends LivingCreature{
             }
         }
     }
-   
-        
+
+
     die() {
         matrix[this.y][this.x] = 0
 
