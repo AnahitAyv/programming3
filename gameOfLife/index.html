@@ -10,7 +10,7 @@
             height: 100vh;
         }
 
-        table {
+        /* table {
             position: absolute;
             top: 100%;
             right: 63%;
@@ -24,21 +24,43 @@
             height: 500px;
         }
 
-        tr {
-            border: rgb(0, 0, 0);
+        table {
+  border-collapse: collapse;
+ 
+}
 
-        }
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
 
-        th {
-            border: rgb(0, 0, 0) solid;
-        }
+thead {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+@keyframes highlight {
+  from { background-color: yellow; }
+  to { background-color: #f2f2f2; }
+}
+
+tbody tr:hover td {
+  animation: highlight 0.5s;
+} */
         
         .all__btns{
          display: flex;
          flex-direction: column;
-         position: absolute;
-left: 550px;
-
+       
         }
         .add__btn{
             padding: 10px;
@@ -325,7 +347,9 @@ left: 550px;
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
-       
+
+
+
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -340,6 +364,7 @@ left: 550px;
     <div class ="main">
 </div>
 <div class="all__btns">
+    
     <button onclick="AddGrass()" class="add__btn" >Add Grass</button>
     <button onclick="AddGrassEater()" class="add__btn" >Add GrassEater</button>
     <button onclick="AddPredator()" class="add__btn" >Add Predator</button>
@@ -355,7 +380,7 @@ left: 550px;
     <button onclick="Autumn()" class="btn__autumn" >Autumn</button>
     <button onclick="Winter()" class="btn__winter" >Winter</button>
 </div>
-    <table>
+    <!-- <table>
         <tr>
             <th>Կերպար</th>
             <th>նկարագրություն</th>
@@ -384,7 +409,7 @@ left: 550px;
         </tr>
 
 
-    </table>
+    </table> -->
 </div>
 </body>
 

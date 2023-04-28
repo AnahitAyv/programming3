@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
         res.redirect('index.html');
 });
 
-server.listen(3000, function () {
+server.listen(4000, function () {
         console.log("Server is run");
 });
 
@@ -87,7 +87,7 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, godzilla, kong
 
         return matrix
 }
-matrix = matrixGenerator(23, 10, 8, 3, 1, 5)
+matrix = matrixGenerator(23,10,8,3,1,5)
 
 io.sockets.emit("send matrix", matrix)
 //arrays
@@ -325,6 +325,7 @@ setInterval(function () {
     statistics.godzilla = godzillaArr.length;
     statistics.kong = kongArr.length;
     statistics.tree = treeArr.length;
-    fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
-    })
+    fs.writeFile("statistics.json", JSON.stringify(statistics),function(){
+     
+})
 }, 1000);

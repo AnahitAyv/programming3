@@ -8,4 +8,3 @@ module.exports =class Tree extends LivingCreature {
 
 }
 
-//gfhh
