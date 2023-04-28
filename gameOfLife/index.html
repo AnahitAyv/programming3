@@ -6,15 +6,14 @@
         body {
             position: relative;
             display: flex;
-
             background-color: #212121;
             height: 100vh;
         }
 
         table {
             position: absolute;
-            top: 25px;
-            right: 20px;
+            top: 100%;
+            right: 63%;
             font-size: 18px;
             border: rgb(255, 255, 255);
             background-color: white;
@@ -33,6 +32,300 @@
         th {
             border: rgb(0, 0, 0) solid;
         }
+        
+        .all__btns{
+         display: flex;
+         flex-direction: column;
+         position: absolute;
+left: 550px;
+
+        }
+        .add__btn{
+            padding: 10px;
+            margin: 10px;
+            margin-left: 100px;
+           width: 200px;
+           border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+        }
+        .add__btn:before {
+    content: '';
+    background: linear-gradient(45deg,  #00ffd5, #002bff, #7a00ff, #ff00c8, #05135a,#280e44, #7c0d9e,#1a9bd6);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.add__btn:active {
+    color: #000
+}
+.add__btn:active:after {
+    background: transparent;
+}
+.add__btn:hover:before {
+    opacity: 1;
+}
+.add__btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+        .exanak__btns{
+            display: flex;
+         flex-direction: column;
+         position: absolute;
+         left: 935px;;
+        }
+        .btn__spring{
+            padding: 10px;
+            margin: 10px;
+           width: 200px;
+           width: 200px;
+           border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+
+        }
+        .btn__spring:before {
+    content: '';
+    background: linear-gradient(45deg, green,#035e0f,#053a0c);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.btn__spring:active {
+    color: #000
+}
+.btn__spring:active:after {
+    background: transparent;
+}
+.btn__spring:hover:before {
+    opacity: 1;
+}
+.btn__spring:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.btn__summer{
+            padding: 10px;
+            margin: 10px;
+           width: 200px;
+           width: 200px;
+           border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+
+        }
+        .btn__summer:before {
+    content: '';
+    background: linear-gradient(45deg, green,#035e0f,#053a0c);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.btn__summer:active {
+    color: #000
+}
+.btn__summer:active:after {
+    background: transparent;
+}
+.btn__summer:hover:before {
+    opacity: 1;
+}
+.btn__summer:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.btn__autumn{
+            padding: 10px;
+            margin: 10px;
+           width: 200px;
+           width: 200px;
+           border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+
+        }
+        .btn__autumn:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(245, 147, 1),#035e0f,#c2f509);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.btn__autumn:active {
+    color: #000
+}
+.btn__autumn:active:after {
+    background: transparent;
+}
+.btn__autumn:hover:before {
+    opacity: 1;
+}
+.btn__autumn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.btn__winter{
+            padding: 10px;
+            margin: 10px;
+           width: 200px;
+           width: 200px;
+           border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+
+        }
+        .btn__winter:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(247, 255, 247),#ffffff,#000000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.btn__winter:active {
+    color: #000
+}
+.btn__winter:active:after {
+    background: transparent;
+}
+.btn__winter:hover:before {
+    opacity: 1;
+}
+.btn__winter:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+       
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,6 +337,24 @@
 </head>
 
 <body>
+    <div class ="main">
+</div>
+<div class="all__btns">
+    <button onclick="AddGrass()" class="add__btn" >Add Grass</button>
+    <button onclick="AddGrassEater()" class="add__btn" >Add GrassEater</button>
+    <button onclick="AddPredator()" class="add__btn" >Add Predator</button>
+    <button onclick="AddGodzilla()" class="add__btn" >Add Godzilla</button>
+    <button onclick="AddKong()" class="add__btn" >Add Kong</button>
+    <button onclick="AddTree()" class="add__btn" >Add Tree</button>
+    <button onclick="KillAll()" class="add__btn" >Kill all</button>
+
+</div>
+<div class="exanak__btns">
+    <button onclick="Spring()" class="btn__spring" >Spring</button>
+    <button onclick="Summer()" class="btn__summer">Summer</button>
+    <button onclick="Autumn()" class="btn__autumn" >Autumn</button>
+    <button onclick="Winter()" class="btn__winter" >Winter</button>
+</div>
     <table>
         <tr>
             <th>Կերպար</th>
@@ -74,7 +385,7 @@
 
 
     </table>
-
+</div>
 </body>
 
 </html>

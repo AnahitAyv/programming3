@@ -4,6 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require("fs")
 
+
 app.use(express.static("."));
 
 app.get('/', function (req, res) {
@@ -193,3 +194,137 @@ function Autumn() {
     weath = "autumn";
     io.sockets.emit('Autumn', weath);
 }
+
+function Kill() {
+        grassArr = [];
+        grassEaterArr = [];
+        predatorArr = [];
+        godzillaArr = [];
+        kongArr = [];
+        treeArr = [];
+        for (var y = 0; y < matrix.length; y++) {
+            for (var x = 0; x < matrix[y].length; x++) {
+                matrix[y][x] = 0;
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddGrass() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 1;
+                var grass = new Grass(x, y)
+                grassArr.push(grass)
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddGrassEater() {
+        let count = 0;
+        for (var i = 0; i < 50; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (count < 7) {
+                if (i < 30) {
+                    if (matrix[y][x] == 0) {
+                        count++;
+                        matrix[y][x] = 2;
+                        var grEat = new GrassEater(x, y);
+                        grassEaterArr.push(grEat);
+                    }
+    
+                } else if (i >= 30) {
+                    if (matrix[y][x] == 0 || matrix[y][x] == 1) {
+                        count++;
+                        matrix[y][x] = 2;
+                        var grEat = new GrassEater(x, y);
+                        grassEaterArr.push(grEat);
+                    }
+                }
+            }
+    
+    
+        }
+    
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddPredator() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 3;
+                var predator = new Predator(x, y);
+                predatorArr.push(predator);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddGodzilla() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 4;
+                var godzilla = new Godzilla(x, y);
+                godzillaArr.push(godzilla);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    
+    function AddKong() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 5;
+                var kong = new Kong(x, y);
+                kongArr.push(kong);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddTree() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 6;
+                var tree = new Tree(x, y)
+                treeArr.push(tree)
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    
+   
+    
+
+io.on('connection', function (socket) {
+        createObject();
+        socket.on("spring", Spring);
+        socket.on("summer", Summer);
+        socket.on("autumn", Autumn);
+        socket.on("winter", Winter);
+        socket.on("addGrass", AddGrass);
+        socket.on("addGrassEater", AddGrassEater);
+        socket.on("killAll", Kill);
+        socket.on("addPredator", AddPredator);
+        socket.on("addGodzilla", AddGodzilla);
+        socket.on("addKong", AddKong);
+        socket.on("addTree", AddTree);
+})
+var statistics = {};
+setInterval(function () {
+    statistics.grass = grassArr.length;
+    statistics.grassEater = grassEaterArr.length;
+    statistics.predator = predatorArr.length;
+    statistics.godzilla = godzillaArr.length;
+    statistics.kong = kongArr.length;
+    statistics.tree = treeArr.length;
+    fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
+    })
+}, 1000);

@@ -58,11 +58,32 @@ function changeColor(matrix) {
                                 if(weath == "summer"){
                                  fill("brown")
                                 rect(x * side, y * side, side, side);
-                                text('🌳', x * side, y * side + toBot);   
+                                text('🌴', x * side, y * side + toBot);   
+                                }else if(weath == "spring"){
+                                        fill("brown")
+                                        rect(x * side, y * side, side, side);
+                                        text('🌱', x * side, y * side + toBot);
+                                }else if(weath == "winter"){
+                                        fill("brown")
+                                        rect(x * side, y * side, side, side);
+                                        text('🌲', x * side, y * side + toBot);
+                                }else if(weath == "autumn"){
+                                        fill("brown")
+                                        rect(x * side, y * side, side, side);
+                                        text('🌳', x * side, y * side + toBot);
                                 }
                                 
-                        } else {
+                        } else if(weath == "spring"){
                                 fill("lightgreen")
+                                rect(x * side, y * side, side, side)
+                        }else if(weath == "summer"){
+                                fill("green")
+                                rect(x * side, y * side, side, side)
+                        }else if(weath == "winter"){
+                                fill("white")
+                                rect(x * side, y * side, side, side)
+                        }else if(weath == "autumn"){
+                                fill("#FFA836")
                                 rect(x * side, y * side, side, side)
                         }
 
@@ -76,3 +97,38 @@ function changeColor(matrix) {
 
 
 socket.on("send matrix", changeColor)
+
+function Winter() {
+        socket.emit("winter");
+    }
+    function Summer() {
+        socket.emit("summer");
+    }
+    function Spring() {
+        socket.emit("spring");
+    }
+    function Autumn() {
+        socket.emit("autumn");
+    }
+    function AddGrass(){
+        socket.emit("addGrass");
+    }
+    function AddGrassEater(){
+        socket.emit("addGrassEater");
+    }
+    function KillAll(){
+        socket.emit("killAll");
+    }
+    function AddPredator(){
+        socket.emit("addPredator");
+    }
+    function AddGodzilla(){
+        socket.emit("addGodzilla");
+    }
+    function AddKong(){
+        socket.emit("addKong");
+    }
+    function AddTree(){
+        socket.emit("addTree");
+    }
+   
